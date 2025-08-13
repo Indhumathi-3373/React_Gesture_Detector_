@@ -13,7 +13,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 
-# One-way Gesture Detection
+# React_Gesture_Detector_
 
 This project streams your camera to a Python server which detects hand gestures and sends back the gesture label in real-time. The frontend is built with React, and the backend can be implemented using Python + WebRTC.
 
@@ -26,7 +26,6 @@ This project streams your camera to a Python server which detects hand gestures 
 - Shows detected gesture label in the UI
 - Start/Stop camera streaming
 - Enable/Disable camera without stopping the connection
-
 ---
 
 ## Prerequisites
@@ -60,10 +59,11 @@ yarn start
 ## SetUp Backend (Python)
 
 ```bash
+
 cd gestureController
 
-#after Changing The Directory
+# after Changing The Directory
 
 python server.py
-#
+
 ```
