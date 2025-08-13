@@ -30,15 +30,12 @@ export default function App() {
   const start = async () => {
     if (running) return;
 
-    // 1) Get local camera
     const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
     localVideoRef.current.srcObject = stream;
 
-    // 2) Create RTCPeerConnection
     const pc = new RTCPeerConnection();
     pcRef.current = pc;
 
-    // 3) Create a data channel the server can use to send labels
     const dc = pc.createDataChannel("gestures");
     channelRef.current = dc;
     dc.onopen = () => console.log("DataChannel open");
@@ -51,10 +48,8 @@ export default function App() {
       }
     };
 
-    // 4) Add local tracks (video only)
     stream.getTracks().forEach((track) => pc.addTrack(track, stream));
 
-    // 5) Offer/Answer with server
     const offer = await pc.createOffer();
     await pc.setLocalDescription(offer);
 
