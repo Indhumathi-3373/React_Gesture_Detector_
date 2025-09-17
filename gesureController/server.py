@@ -10,7 +10,7 @@ from aiortc.contrib.media import MediaBlackhole
 from av import VideoFrame
 from ultralytics import YOLO
 
-yolo_model = YOLO(r"C:/Users/bugzx/OneDrive/Desktop/v0dev_codes/YOLOv10n_gestures.pt")
+yolo_model = YOLO(r"C:\Users\INDHUMATHI C\Documents\GitHub\transign\React_Gesture_Detector_\gesureController")
 
 PCS = set()
 
@@ -97,7 +97,8 @@ async def offer(request: web.Request):
 
             async def send_label(payload):
                 if label_channel["send"] is not None:
-                    await label_channel["send"](payload)
+                   await label_channel.send(payload)
+
 
             task = asyncio.create_task(consume_and_detect(track, send_label))
 
