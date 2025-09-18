@@ -79,7 +79,6 @@ async def offer(request: web.Request):
             PCS.discard(pc)
 
     blackhole = MediaBlackhole()
-
     @pc.on("datachannel")
     def on_datachannel(channel):
         print("DataChannel created by client:", channel.label)
