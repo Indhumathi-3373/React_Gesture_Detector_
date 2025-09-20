@@ -8,7 +8,7 @@ from aiortc.contrib.media import MediaBlackhole
 from av import VideoFrame
 from ultralytics import YOLO
 
-yolo_model = YOLO(r"Transign\gesureController\models\YOLOv10n_gestures.pt")
+yolo_model = YOLO("C:/Users/INDHUMATHI C/Documents/GitHub/transign/React_Gesture_Detector_/gesureController/YOLOv10n_gestures.pt")
 
 PCS = set()
 
